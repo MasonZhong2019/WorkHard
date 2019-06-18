@@ -1,0 +1,66 @@
+练习: 创建表
+
+1. 创建一个游戏人物表
+
+   要求包含 名称,职业,核心技能,皮肤数量,攻击力
+
+2. 创建一个 购买衣服 分类表
+
+   衣服品牌  衣服类型  价格  颜色   喜爱程度
+
+3. student 年龄大于20 性别为男 分数不超过80的,分数改为85
+
+
+insert into [table] () values ();
+
+delete from [table] where ...
+
+update [table] set ... where ...
+
+select .. from [table] where ... 
+
+
+
+练习:
+
+1. 创建 class 表,内容 
+   
+	 姓名  性别  年龄  分数
+
+	 create table class (id int primary key auto_increment,name varchar(32) not null,sex char,age int not null,score float);
+
+2. 插入若干数据
+   年龄  7--12岁之间  分数60--100
+
+	 insert into class (name,sex,age,score) values ('张三','m',10,99);
+
+3. 查找 年龄小于10岁的所有人
+	 
+	 select * from class where age < 10;
+
+   查找 年龄为8岁或者11岁,并且 分数大于90的记录
+   
+	 select * from class where age in (8,11) and score > 90;
+
+	 查找 性别为 男 并且 分数在 85到95之间的数据
+   
+	 select * from class where sex='m' and score between 85 and 95;
+
+	 查找 性别为女 或者 分数大于90的
+
+	 select * from class where sex = 'w' or score > 90;
+
+4. 修改年龄小于8岁的人员年龄加1
+
+   update class set age = age + 1 where age < 8;
+
+5. 删除所有分数小于70的记录
+   
+	 delete from class where score < 70;
+
+作业 : 
+
+1. 观察百度注册信息,将注册内容设计一个mysql数据表,创建该数据表,插入几条数据
+
+2. 观察淘宝用户订单记录, 根据订单记录的内容,创建数据表,插入几条数据
+
